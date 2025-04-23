@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="da">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BuckStar</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- Header -->
+  <!-- 🌟 HEADER -->
   <header>
     <div class="logo">BuckStar</div>
     <div class="menu-toggle" onclick="toggleMenu()">☰</div>
@@ -20,18 +20,24 @@
     </nav>
   </header>
 
-  <!-- Hero med SMK-animation -->
+  <!-- 🎬 HERO med SMK-lignende animation -->
   <section class="hero">
-    <div class="animation-box">
-      <h1>Velkommen til BuckStar</h1>
+    <div class="svg-container">
+      <!-- SVG firkant der bliver tegnet -->
+      <svg width="500" height="300" class="animated-rect">
+        <rect x="5" y="5" width="490" height="290" rx="10" ry="10" />
+      </svg>
+      <!-- Tekst vises efter firkanten er tegnet -->
+      <h1 class="hero-text">Velkommen til BuckStar</h1>
     </div>
   </section>
 
-  <!-- Footer -->
+  <!-- 🧾 FOOTER -->
   <footer>
     <p>© 2025 BuckStar Kaffebar | Hygge & Kvalitet</p>
   </footer>
 
+  <!-- 🔗 JavaScript -->
   <script src="script.js"></script>
 </body>
 </html>

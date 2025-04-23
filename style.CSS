@@ -1,167 +1,158 @@
-/* Reset og fonts */
+/* 🌍 Reset og base-stil */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+body {
+  background-color: #F5EFE6; /* creme baggrund */
+  color: #1F1F1F;
+}
+
+/* 🟫 HEADER (fast topbjælke) */
+header {
+  position: sticky;
+  top: 0;
+  background-color: #4B2E2B; /* kaffe-brun */
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 2rem;
+  height: 70px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
+.menu-toggle {
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: none;
+}
+
+nav.menu {
+  display: flex;
+  gap: 1.5rem;
+}
+
+nav.menu a {
+  color: #F5EFE6;
+  text-decoration: none;
+}
+
+nav.menu a:hover {
+  color: #C9A66B; /* guld-brun hover */
+}
+
+/* 🌄 HERO med SMK-animation */
+.hero {
+  position: relative;
+  height: 100vh;
+  background-image: url('img/kaffebaggrund.jpg'); /* baggrundsbillede */
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: flex-end; /* Læg firkanten mod højre */
+  align-items: center;
+  padding-right: 10vw; /* luft fra højre */
+}
+
+/* 📦 SVG container – større og animeret */
+.svg-container {
+  position: relative;
+  width: 500px;
+  height: 300px;
+  animation: fadeInBlock 1s ease-out forwards;
+}
+
+/* ✍️ Animeret firkant (SVG) */
+.animated-rect rect {
+  fill: rgba(245, 239, 230, 0.95); /* lys creme */
+  stroke: #4B2E2B;                 /* kaffe-kant */
+  stroke-width: 3;
+  stroke-dasharray: 1580;          /* samlet længde */
+  stroke-dashoffset: 1580;         /* skjult fra start */
+  animation: drawRect 2s ease-out forwards;
+  rx: 10;
+  ry: 10;
+}
+
+/* 📝 Tekst i firkanten */
+.hero-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2rem; /* større tekst */
+  color: #4B2E2B;
+  opacity: 0;
+  animation: fadeInText 1.5s ease-out 2s forwards;
+}
+
+/* 🎞️ Animation: tegn firkanten */
+@keyframes drawRect {
+  to {
+    stroke-dashoffset: 0;
   }
-  
-  /* Header */
-  header {
-    position: sticky;
-    top: 0;
-    background-color: #1f1f1f;
-    color: white;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
-    z-index: 1000;
+}
+
+/* 🎞️ Animation: fade tekst ind */
+@keyframes fadeInText {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* 🎞️ Animation: fade boksen op */
+@keyframes fadeInBlock {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
   }
-  
-  .logo {
-    font-size: 1.5rem;
-    font-weight: bold;
+  to {
+    transform: translateY(0);
+    opacity: 1;
   }
-  
+}
+
+/* 📦 FOOTER */
+footer {
+  background-color: #1F1F1F;
+  color: #F5EFE6;
+  text-align: center;
+  padding: 1.5rem;
+  font-size: 0.9rem;
+}
+
+/* 📱 Responsiv menu (mobilvenlig) */
+@media (max-width: 768px) {
   .menu-toggle {
-    font-size: 1.5rem;
-    cursor: pointer;
-    display: none;
+    display: block;
   }
-  
+
   nav.menu {
-    display: flex;
-    gap: 1.5rem;
-  }
-  
-  nav.menu a {
-    color: white;
-    text-decoration: none;
-    transition: 0.3s;
-  }
-  
-  nav.menu a:hover {
-    text-decoration: underline;
-  }
-  
-  /* Hero / Forside */
-  .hero {
-    position: relative;
-    height: 100vh;
-    background-image: url('kaffebaggrund.jpg'); /* Du skal sætte dit billede her */
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .animation-box {
-    background-color: rgba(255, 255, 255, 0.85);
-    padding: 2rem 3rem;
-    animation: slideIn 1.5s ease-out;
-    border-radius: 8px;
-  }
-  
-  .animation-box h1 {
-    font-size: 2rem;
-    color: #1f1f1f;
-  }
-  
-  /* Footer */
-  footer {
-    background-color: #1f1f1f;
-    color: white;
-    text-align: center;
+    display: none;
+    flex-direction: column;
+    background-color: #4B2E2B;
+    position: absolute;
+    top: 70px;
+    right: 20px;
     padding: 1rem;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-  }
-  
-  /* Animation */
-  @keyframes slideIn {
-    from {
-      transform: translateY(100px);
-      opacity: 0;
-    }
-    to {
-      transform: translateY(0);
-      opacity: 1;
-    }
-  }
-  
-  /* Responsiv menu */
-  @media (max-width: 768px) {
-    .menu-toggle {
-      display: block;
-    }
-  
-    nav.menu {
-      display: none;
-      flex-direction: column;
-      background-color: #2e2e2e;
-      position: absolute;
-      top: 60px;
-      right: 20px;
-      padding: 1rem;
-      border-radius: 8px;
-    }
-  
-    nav.menu.active {
-      display: flex;
-    }
-  }
-
-  
-
-  body {
-    background-color: #F5EFE6; /* cremefarvet baggrund */
-    color: #1F1F1F;
-    font-family: 'Arial', sans-serif;
-  }
-  
-  header {
-    position: sticky;
-    top: 0;
-    background-color: #4B2E2B; /* kaffe-brun */
-    color: white;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.2rem 2rem;
-    height: 70px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-    z-index: 1000;
-  }
-  
-  .logo {
-    font-size: 1.6rem;
-    font-weight: bold;
-    letter-spacing: 1px;
-  }
-  
-  nav.menu a {
-    color: #F5EFE6; /* creme tekst */
-  }
-  
-  nav.menu a:hover {
-    color: #C9A66B; /* latte-karamel farve når musen er over */
-  }
-  
-  footer {
-    background-color: #1F1F1F; /* espresso sort */
-    color: #F5EFE6;
-    text-align: center;
-    padding: 1.5rem;
-    font-size: 0.9rem;
-  }
-
-  .galleri-billede {
-    max-width: 100%;
-    height: auto;
     border-radius: 8px;
-    margin: 1rem 0;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
   }
+
+  nav.menu.active {
+    display: flex;
+  }
+
+  .hero {
+    justify-content: center; /* center firkanten på mobil */
+    padding-right: 0;
+  }
+}
