@@ -1,43 +1,40 @@
 <!DOCTYPE html>
 <html lang="da">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BuckStar</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- 🌟 HEADER -->
+  <!-- 🟫 Header -->
   <header>
     <div class="logo">BuckStar</div>
     <div class="menu-toggle" onclick="toggleMenu()">☰</div>
     <nav class="menu">
-      <a href="#">Om os</a>
       <a href="#">Menu</a>
+      <a href="#">Om os</a>
       <a href="#">Galleri</a>
       <a href="#">Kontakt</a>
     </nav>
   </header>
 
-  <!-- 🎬 HERO med SMK-lignende animation -->
+  <!-- 🌄 Hero med animeret firkant -->
   <section class="hero">
     <div class="svg-container">
-      <!-- SVG firkant der bliver tegnet -->
-      <svg width="500" height="300" class="animated-rect">
-        <rect x="5" y="5" width="490" height="290" rx="10" ry="10" />
+      <svg class="animated-rect" width="100%" height="100%" viewBox="0 0 1000 500">
+        <rect x="0" y="0" width="1000" height="500" />
       </svg>
-      <!-- Tekst vises efter firkanten er tegnet -->
-      <h1 class="hero-text">Velkommen til BuckStar</h1>
+      <div class="hero-text">Velkommen til BuckStar</div>
     </div>
   </section>
 
-  <!-- 🧾 FOOTER -->
+  <!-- 📦 Footer -->
   <footer>
-    <p>© 2025 BuckStar Kaffebar | Hygge & Kvalitet</p>
+    © 2025 BuckStar Kaffebar – Hygge og kaffe siden 2025 ☕
   </footer>
 
-  <!-- 🔗 JavaScript -->
   <script src="script.js"></script>
 </body>
 </html>

@@ -51,36 +51,40 @@ nav.menu a:hover {
   color: #C9A66B; /* guld-brun hover */
 }
 
-/* 🌄 HERO med SMK-animation */
+/* 🌄 HERO med baggrundsbillede og animeret firkant */
 .hero {
   position: relative;
   height: 100vh;
-  background-image: url('img/kaffebaggrund.jpg'); /* baggrundsbillede */
+  background-image: url('img/kaffevar.jpg'); /* sørg for at filen ligger i en mappe kaldet img */
   background-size: cover;
   background-position: center;
   display: flex;
-  justify-content: flex-end; /* Læg firkanten mod højre */
+  justify-content: flex-end; /* firkanten mod højre */
   align-items: center;
-  padding-right: 10vw; /* luft fra højre */
+  padding-right: 10vw; /* giver lidt luft på højre side */
 }
 
-/* 📦 SVG container – større og animeret */
+/* 📦 SVG container */
 .svg-container {
-  position: relative;
-  width: 500px;
-  height: 300px;
+  position: absolute;  /* Placere den relativt til .hero */
+  top: 10%;
+  left: 10%;  /*Sæt den helt til højre */
+  Right: 1%; 
+  transform: translateY(-50%); /* centrer firkanten lodret */
+  width: 1200px; /* Juster bredden på firkanten her */
+  height: 500px; /* Juster højden på firkanten her */
   animation: fadeInBlock 1s ease-out forwards;
 }
 
-/* ✍️ Animeret firkant (SVG) */
+/* 🔲 Selve firkanten */
 .animated-rect rect {
-  fill: rgba(245, 239, 230, 0.95); /* lys creme */
-  stroke: #4B2E2B;                 /* kaffe-kant */
+  fill: rgba(245, 239, 230, 0.95); /* Lys creme */
+  stroke: #4B2E2B; /* Kaffe-brun kant */
   stroke-width: 3;
-  stroke-dasharray: 1580;          /* samlet længde */
-  stroke-dashoffset: 1580;         /* skjult fra start */
+  stroke-dasharray: 3000; /* Dette kan justeres for at ændre hvor hurtigt firkanten tegnes */
+  stroke-dashoffset: 3000; /* Skjult fra start */
   animation: drawRect 2s ease-out forwards;
-  rx: 10;
+  rx: 10; /* afrundede hjørner */
   ry: 10;
 }
 
@@ -90,26 +94,24 @@ nav.menu a:hover {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 2rem; /* større tekst */
+  font-size: 2rem;
   color: #4B2E2B;
   opacity: 0;
   animation: fadeInText 1.5s ease-out 2s forwards;
 }
 
-/* 🎞️ Animation: tegn firkanten */
+/* 🎞️ Animationer */
 @keyframes drawRect {
   to {
     stroke-dashoffset: 0;
   }
 }
 
-/* 🎞️ Animation: fade tekst ind */
 @keyframes fadeInText {
   from { opacity: 0; }
   to { opacity: 1; }
 }
 
-/* 🎞️ Animation: fade boksen op */
 @keyframes fadeInBlock {
   from {
     transform: translateY(30px);
