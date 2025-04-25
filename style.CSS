@@ -55,13 +55,13 @@ nav.menu a:hover {
 .hero {
   position: relative;
   height: 100vh;
-  background-image: url('img/kaffevar.jpg'); /* sørg for at filen ligger i en mappe kaldet img */
+  background-image: url('img/kaffevar.jpg'); /* 💡 Her linker du til billedet */
   background-size: cover;
   background-position: center;
   display: flex;
-  justify-content: flex-end; /* firkanten mod højre */
+  justify-content: flex-end;
   align-items: center;
-  padding-right: 10vw; /* giver lidt luft på højre side */
+  padding-right: 10vw; /* giver lidt luft fra højre */
 }
 
 /* 📦 SVG container */
@@ -69,9 +69,9 @@ nav.menu a:hover {
   position: absolute;  /* Placere den relativt til .hero */
   top: 10%;
   left: 10%;  /*Sæt den helt til højre */
-  Right: 1%; 
+  Right: 0%; 
   transform: translateY(-50%); /* centrer firkanten lodret */
-  width: 1200px; /* Juster bredden på firkanten her */
+  width: 1800px; /* Juster bredden på firkanten her */
   height: 500px; /* Juster højden på firkanten her */
   animation: fadeInBlock 1s ease-out forwards;
 }

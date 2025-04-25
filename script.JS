@@ -1,4 +1,9 @@
-// 🌐 Toggle menu for mobil
 function toggleMenu() {
-  document.querySelector('nav.menu').classList.toggle('active');
+  const menu = document.querySelector('nav.menu');
+  menu.classList.toggle('active');
 }
+
+window.addEventListener('DOMContentLoaded', () => {
+  const box = document.querySelector('.animation-box');
+  box.style.opacity = '1';
+});
