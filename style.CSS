@@ -1,4 +1,4 @@
-/* Reset og base-stil */
+/* 🔄 Nulstiller standardmargen/polstring og sætter box-sizing */
 * {
   margin: 0;
   padding: 0;
@@ -6,12 +6,14 @@
   font-family: 'Arial', sans-serif;
 }
 
+/* 🎨 Baggrundsfarve og forhindrer horisontal scroll */
 body {
   background-color: #F5EFE6;
   color: #1F1F1F;
+  overflow-x: hidden;
 }
 
-/* HEADER */
+/* 🟫 Øverste bjælke med logo og menu */
 header {
   position: sticky;
   top: 0;
@@ -26,28 +28,33 @@ header {
   z-index: 1000;
 }
 
+/* 🔗 Venstre del af headeren (logo og navn) */
 .left-header {
   display: flex;
   align-items: center;
   gap: 1rem;
 }
 
+/* 🖼️ Logo-billedet */
 .logo-img {
   height: 120px;
   width: auto;
 }
 
+/* 📝 Logo-tekst */
 .logo {
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   font-weight: bold;
 }
 
+/* 📱 Hamburger-menu ikon */
 .menu-toggle {
   font-size: 1.5rem;
   cursor: pointer;
   display: none;
 }
 
+/* 🔗 Navigation links */
 nav.menu {
   display: flex;
   gap: 1.5rem;
@@ -62,7 +69,7 @@ nav.menu a:hover {
   color: #C9A66B;
 }
 
-/* HERO */
+/* 🏞️ Hero-sektion med baggrundsbillede */
 .hero {
   position: relative;
   height: 100vh;
@@ -70,23 +77,30 @@ nav.menu a:hover {
   background-size: cover;
   background-position: center;
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-end; /* ⬅️ Flytter containeren helt til højre */
   align-items: center;
-  padding-right: 10vw;
+  padding-right: 1vw; /* 📏 Luft fra højre kant */
+  overflow: hidden;
 }
 
+/* 📦 Container til SVG og tekst */
 .svg-container {
-  position: absolute;
-  top: 10%;
-  left: 10%;
-  right: 0%;
-  transform: translateY(-50%);
-  width: 1800px;
+  position: relative;
+  width: 90vw;
+  max-width: 1000px;
   height: 500px;
   animation: fadeInBlock 1s ease-out forwards;
 }
 
+/* 🎞️ Selve firkanten */
+.animated-rect {
+  width: 100%;
+  height: 100%;
+}
+
 .animated-rect rect {
+  width: 100%;
+  height: 100%;
   fill: rgba(245, 239, 230, 0.95);
   stroke: #4B2E2B;
   stroke-width: 3;
@@ -97,6 +111,7 @@ nav.menu a:hover {
   ry: 10;
 }
 
+/* ✍️ Teksten inde i firkanten */
 .hero-text {
   position: absolute;
   top: 50%;
@@ -106,20 +121,23 @@ nav.menu a:hover {
   color: #4B2E2B;
   opacity: 0;
   animation: fadeInText 1.5s ease-out 2s forwards;
+  text-align: center;
 }
 
-/* Animationer */
+/* 🔄 Tegn stregen */
 @keyframes drawRect {
   to {
     stroke-dashoffset: 0;
   }
 }
 
+/* ✨ Fade-in på tekst */
 @keyframes fadeInText {
   from { opacity: 0; }
   to { opacity: 1; }
 }
 
+/* 🌀 Fade-in på firkant */
 @keyframes fadeInBlock {
   from {
     transform: translateY(30px);
@@ -131,7 +149,7 @@ nav.menu a:hover {
   }
 }
 
-/* FOOTER */
+/* 👣 Footer nederst på siden */
 footer {
   background-color: #1F1F1F;
   color: #F5EFE6;
@@ -140,7 +158,7 @@ footer {
   font-size: 0.9rem;
 }
 
-/* RESPONSIV */
+/* 📱 Responsiv til mobil og tablets */
 @media (max-width: 768px) {
   .menu-toggle {
     display: block;
